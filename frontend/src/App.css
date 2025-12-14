@@ -1,0 +1,160 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --text: #111827;
+  --muted: #6b7280;
+  --blue: #1d4ed8;
+  --blueDark: #1e40af;
+
+  --goodBg: #e7f7ef;
+  --goodText: #0f5132;
+
+  --badBg: #fde8e8;
+  --badText: #7f1d1d;
+
+  --scoreBg: #fff7cc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans";
+  color: var(--text);
+  background: var(--bg);
+}
+
+.page { padding: 24px 14px; }
+.container { max-width: 980px; margin: 0 auto; }
+
+.header { text-align: center; margin-bottom: 18px; }
+.title { margin: 0; font-size: 40px; font-weight: 800; }
+.subtitle { margin: 8px 0 0; color: var(--muted); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.uploadRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.uploadLabel {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.uploadBox {
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  position: relative;
+}
+
+.fileName { font-weight: 600; }
+.fileHint { color: var(--muted); font-size: 12px; margin-top: 4px; }
+
+.fileInput {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin: 14px 0 12px;
+}
+
+.primaryBtn {
+  background: linear-gradient(180deg, var(--blue), var(--blueDark));
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.primaryBtn:disabled { opacity: 0.7; cursor: not-allowed; }
+
+.errorBox {
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #9f1239;
+}
+
+.scoreCard {
+  background: var(--scoreBg);
+  border-color: #f1e7a6;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.scoreTitle { font-weight: 800; margin-bottom: 6px; }
+.scoreValue { font-size: 56px; font-weight: 900; line-height: 1; }
+.scoreOutOf { font-size: 18px; font-weight: 800; color: #7c6f2b; margin-left: 4px; }
+
+.twoCols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.cardHeader {
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.cardHeader.plain { margin-bottom: 10px; }
+
+.cardSub {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.goodDot { background: #16a34a; }
+.badDot { background: #ef4444; }
+
+.pillWrap { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.pill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid transparent;
+}
+
+.goodPill { background: var(--goodBg); color: var(--goodText); border-color: #b7ebc8; }
+.badPill { background: var(--badBg); color: var(--badText); border-color: #fecaca; }
+
+.emptyText { color: var(--muted); font-size: 13px; }
+
+.cardText { margin: 0; color: #374151; line-height: 1.5; }
+
+@media (max-width: 780px) {
+  .uploadRow, .twoCols { grid-template-columns: 1fr; }
+}
